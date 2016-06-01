@@ -61,3 +61,8 @@ The better way I should have started with is some plots and visual interpretatio
 * **MAJOR TAKEAWAYS**
 	*   Small teams (orgs) that invite users as guests or a user that signs up through google or organically to join a small org. have the highest potential to become adopted users. 
 	*   Mailing lists and enabled for marketing while having a positive effect on adoption, it is too small to be significant. 
+
+**Further Consideration** - Based on my points on this data set, if we actually wanted to actually predict adopted, I would use some sort of decision tree model. A lot of the signals are actually catergorical segmentation which lends well to decision trees for both accuracy and observation of the segments. 
+
+This could also be looked at through a cohort lens. If Asana changes its product often, I would look at the adoption rate of cohorts in a reasonable time frame (30 days out from signup or so). For a deeper dive, segmenting those cohorts would by the above categories will also reveal better information about what purposes or intentions users have with the product that would make the adopted. 
+
