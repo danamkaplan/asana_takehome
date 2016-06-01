@@ -33,14 +33,14 @@ For the size of the org when a user joined, I just decided to do the work in [SQ
 mysql -u interview --password=interview --database=interview -P 3306 -h data-challenge-9x.cswh4gchpi8n.us-east-1.rds.amazonaws.com < size_org_joined.sql | tr '\t' ',' > size_org_joined.csv
 ```
 
-My first inclination was "I am trying to predict a binary outcome (adopted or not). Let's make a logistic regression." Please look at the notebook for it [here](https://github.com/danamkaplan/asana_takehome/blob/master/Asana Users.ipynb). As you can see, the model was fairly week. The only two statistically significant take aways are: 
+My first inclination was "I am trying to predict a binary outcome (adopted or not). Let's make a logistic regression." Please look at the notebook for it [here](https://github.com/danamkaplan/asana_takehome/blob/master/Asana Users.ipynb). As you can see, the model was fairly weak. The only two statistically significant independent variables are: 
 
 * Personal Projects as a signup lowers the odds of adoption by a factor of ~32.9% (compared to the base case of organic signup through asana.com) 
 * For every unit bigger an org is when a user joins, the base odds will be multiplied/lower by a factor of ~49.7%
 
-The problem I realized with this model (AFTER I did all the regression work of course) is we are using mostly categorical independent variables to predict a categorical outcome. You can see the model is a really bad fit to begin with (Pseudo R-squ. of 0.02423). Regressions are kind of in the language of hypothesis tests: "If I change to a different categorical label from the base case or go up on more unit in a continuous label, how will that predict Y and is it significant?" This question doesn't really have a solid "base case" (or maybe I don't know Asana's product well enough). Basically, I would use this method if we analyzed an experiment ran by Asana. 
+The problem I realized with this model (AFTER I did all the regression work of course) is we are using mostly categorical independent variables to predict a categorical outcome. You can see the model is a really bad fit to begin with (Pseudo R-squ. of 0.02423). Regressions are kind of in the language of hypothesis tests: "If I change to a different categorical label from the base case or go up on more unit in a continuous label, how will that predict Y and is it significant?" This question doesn't really have a solid "base case" (or maybe I don't know Asana's product well enough). Basically, I would use this method first if we analyzed an experiment ran by Asana - not the type of data we already gathered. 
 
-The better way I should have started with is some plots and visual interpretation like [I quickly threw together with Tableau.] (https://public.tableau.com/views/Asana/CreationSource?:embed=y&:display_count=yes&:showTabs=y) Quick Points:
+The better way I should have started with is just some plots and visual interpretation like [I quickly threw together with Tableau.] (https://public.tableau.com/views/Asana/CreationSource?:embed=y&:display_count=yes&:showTabs=y) Quick Points:
 
 * All the plots are the same format
 	* Blue Bars are total VOLUME of users who signed up
