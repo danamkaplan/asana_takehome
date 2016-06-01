@@ -28,7 +28,7 @@ LEFT OUTER JOIN
       GROUP BY
         user_id,
         DATE(time_stamp)
-    ) 
+    ) A 
     JOIN
     (
       SELECT
